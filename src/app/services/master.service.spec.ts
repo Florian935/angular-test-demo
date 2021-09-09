@@ -5,18 +5,25 @@ import { ValueService } from './value.service';
 
 describe('MasterService', () => {
     let masterService: MasterService;
+    let valueServiceSpy: jasmine.SpyObj<ValueService>;
 
     beforeEach(() => {
-        TestBed.configureTestingModule({});
+        const spy = jasmine.createSpyObj('ValueService', ['getValue']);
+
+        TestBed.configureTestingModule({
+            providers: [
+                MasterService,
+                { provide: ValueService, useValue: spy },
+            ],
+        });
         masterService = TestBed.inject(MasterService);
+        valueServiceSpy = TestBed.inject(
+            ValueService
+        ) as jasmine.SpyObj<ValueService>;
     });
 
     it('#MasterService should be created', () => {
         expect(masterService).toBeTruthy();
-    });
-
-    it('#getValue should return real value from the real service', () => {
-        expect(masterService.getValue()).toBe('real value');
     });
 
     it('#getValue should return faked value from a fake object', () => {
@@ -25,13 +32,11 @@ describe('MasterService', () => {
         expect(masterService.getValue()).toBe('fake value');
     });
 
+    // Prefer spies as they are usually the easiest way to mock services.
     it('#getValue should return stubbed value from a spy', () => {
         // create `getValue` spy on an object representing the ValueService
-        const valueServiceSpy = jasmine.createSpyObj('ValueService', [
-            ['getValue'],
-        ]);
-
         // set the value to return when the `getValue` spy is called.
+
         const stubValue = 'stub value';
         valueServiceSpy.getValue.and.returnValue(stubValue);
 
