@@ -1,7 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { MockUserService } from 'src/app/mock/mock-user-service';
 import { UserService } from 'src/app/services/user.service';
-
 import { WelcomeComponent } from './welcome.component';
 
 describe('WelcomeComponent', () => {
