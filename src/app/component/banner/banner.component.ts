@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
     styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
+    title = 'Test Tour of Heroes';
+
     constructor() {}
 }
