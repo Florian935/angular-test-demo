@@ -9,6 +9,8 @@ import { BannerComponent } from './component/banner/banner.component';
 import { DashboardHeroComponent } from './component/dashboard-hero/dashboard-hero.component';
 import { LightSwitchComponent } from './component/light-switch/light-switch.component';
 import { WelcomeComponent } from './component/welcome/welcome.component';
+import { AboutComponent } from './component/about/about.component';
+import { TwainQuoteComponent } from './component/twain-quote/twain-quote.component';
 
 @NgModule({
     declarations: [
@@ -17,6 +19,8 @@ import { WelcomeComponent } from './component/welcome/welcome.component';
         DashboardHeroComponent,
         WelcomeComponent,
         BannerComponent,
+        AboutComponent,
+        TwainQuoteComponent,
     ],
     imports: [
         BrowserModule,

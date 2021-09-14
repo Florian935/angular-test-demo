@@ -1,8 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { TestBed } from '@angular/core/testing';
 import { defer } from 'rxjs';
 import { Hero } from '../model/hero';
-
 import { HeroService } from './hero.service';
 
 describe('HeroService', () => {
