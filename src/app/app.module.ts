@@ -11,6 +11,7 @@ import { LightSwitchComponent } from './component/light-switch/light-switch.comp
 import { WelcomeComponent } from './component/welcome/welcome.component';
 import { AboutComponent } from './component/about/about.component';
 import { TwainQuoteComponent } from './component/twain-quote/twain-quote.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { TwainQuoteComponent } from './component/twain-quote/twain-quote.compone
         BannerComponent,
         AboutComponent,
         TwainQuoteComponent,
+        DashboardComponent,
     ],
     imports: [
         BrowserModule,
