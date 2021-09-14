@@ -4,8 +4,8 @@ import {
     ComponentFixtureAutoDetect,
     TestBed,
 } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
-
 import { BannerComponent } from './banner.component';
 
 describe('BannerComponent', () => {
@@ -15,6 +15,7 @@ describe('BannerComponent', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule({
+            imports: [FormsModule],
             declarations: [BannerComponent],
             providers: [
                 { provide: ComponentFixtureAutoDetect, useValue: true },
@@ -69,5 +70,16 @@ describe('BannerComponent', () => {
         component.title = 'Test title';
         fixture.detectChanges();
         expect(h1.textContent).toContain(component.title);
+    });
+
+    it('should contain input value "hello world"', () => {
+        const hostElement: HTMLElement = fixture.nativeElement;
+        const input: HTMLInputElement = hostElement.querySelector('input')!;
+        const nameDisplay: HTMLElement = hostElement.querySelector('span')!;
+
+        input.value = 'Hello world';
+        input.dispatchEvent(new Event('input'));
+        fixture.detectChanges();
+        expect(nameDisplay.textContent).toBe('Hello world');
     });
 });

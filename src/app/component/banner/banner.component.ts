@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class BannerComponent {
     title = 'Test Tour of Heroes';
+    hero = '';
 
     constructor() {}
 }

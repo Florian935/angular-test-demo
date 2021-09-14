@@ -1,2 +1,9 @@
 <h1>{{ title }}</h1>
 <p>banner works!</p>
+<h2>
+    <span>{{ hero }}</span> Details
+</h2>
+<div>
+    <label for="name">name: </label>
+    <input id="name" [(ngModel)]="hero" placeholder="name" />
+</div>
